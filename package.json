@@ -1,0 +1,67 @@
+{
+  "name": "@swingby-protocol/ip-check",
+  "description": "Small util to check a user's country by IP and whether access to our product should be restricted",
+  "version": "0.0.0-development",
+  "module": "dist/ip-check.esm.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "license": "Apache-2.0",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SwingbyProtocol/ip-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SwingbyProtocol/ip-check/issues"
+  },
+  "homepage": "https://github.com/SwingbyProtocol/ip-check#readme",
+  "keywords": [
+    "Crypto",
+    "Bitcoin",
+    "JavaScript",
+    "NodeJS",
+    "IP",
+    "geolocation"
+  ],
+  "scripts": {
+    "dev": "start-storybook -p 6006",
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "eslint .",
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx,css,json,md,mdx,html}'",
+    "run-example": "ts-node --compiler-options '{ \"module\": \"commonjs\" }'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@size-limit/preset-small-lib": "^4.7.0",
+    "@swingby-protocol/eslint-config": "^1.2.0",
+    "@swingby-protocol/prettier-config": "^1.0.2",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2",
+    "semantic-release": "^17.2.2",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "^3.1.0"
+  },
+  "resolutions": {
+    "**/@typescript-eslint/eslint-plugin": "4.6.1"
+  }
+}
