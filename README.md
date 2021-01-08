@@ -8,6 +8,6 @@ Small util to check a user's country by IP and whether access to our product sho
 ```ts
 import { getIpInfo, shouldBlockRegion } from '@swingby-protocol/ip-check';
 
-const ipInfo = await getIpInfo({ ip: '…', ipstackApiKey: '…' });
+const ipInfo = await getIpInfo({ ip: '…', ipApiKey: '…' });
 const yesOrNo = shouldBlockRegion(ipInfo);
 ```
