@@ -35,7 +35,7 @@ export const getIpInfo = async ({ ip, ipApiKey }: { ip: string; ipApiKey?: strin
     innerRegionCode: data.region_code as string,
     innerRegionName: data.region as string,
     languages: (typeof data.languages === 'string' ? data.languages.split(',') : []) as string[],
-    phoneCode: (data.location?.country_calling_code || null) as string | null,
-    isEuropeanUnion: (data.location?.in_eu ?? null) as boolean | null,
+    phoneCode: (data.country_calling_code || null) as string | null,
+    isEuropeanUnion: (data.in_eu ?? null) as boolean | null,
   };
 };
