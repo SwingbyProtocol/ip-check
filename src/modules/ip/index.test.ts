@@ -4,7 +4,7 @@ it('returns correctly', async () => {
   expect.assertions(1);
   const ip = '213.94.28.46';
 
-  expect(await getIpInfo({ ip, ipstackApiKey: process.env.IPSTACK_API_KEY ?? '' })).toMatchObject({
+  expect(await getIpInfo({ ip, ipApiKey: process.env.IPAPI_API_KEY ?? '' })).toMatchObject({
     ip,
     type: 'ipv4',
     regionCode: 'ES',
