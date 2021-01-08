@@ -6,7 +6,20 @@ type Req = {
   connection: { remoteAddress?: string };
 };
 
-export const getIpInfoFromRequest = async ({ req, ipApiKey }: { req: Req; ipApiKey?: string }) => {
+type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
+export type IpInfoFromRequest = {
+  info: ThenArg<ReturnType<typeof getIpInfo>> | null;
+  ip: string | null;
+  shouldBlockRegion: boolean;
+};
+
+export const getIpInfoFromRequest = async ({
+  req,
+  ipApiKey,
+}: {
+  req: Req;
+  ipApiKey?: string;
+}): Promise<IpInfoFromRequest> => {
   const ip =
     (typeof req.headers['x-real-ip'] === 'string' ? req.headers['x-real-ip'] : null) ??
     req.connection.remoteAddress ??
