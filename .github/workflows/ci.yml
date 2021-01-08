@@ -22,4 +22,4 @@ jobs:
       - name: Test
         run: yarn test --ci --coverage --maxWorkers=2
         env:
-          IPSTACK_API_KEY: ${{ secrets.IPSTACK_API_KEY }}
+          IPAPI_API_KEY: ${{ secrets.IPAPI_API_KEY }}
